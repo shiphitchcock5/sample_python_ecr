@@ -11,8 +11,8 @@ env:
     - M1=ONE
 
 branches:
-  only:
-   - master    
+  except:
+   - "post/ci"    
     
 build:
  # pre_ci:
