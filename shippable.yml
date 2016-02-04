@@ -1,5 +1,9 @@
 language: "python"
 
+branches:
+ only:
+  - "default_image"
+  
 python:
   - '3.3'
   -  3.4
