@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - 3.4
+  - 3.2
 
 env:
   global:
@@ -11,9 +11,11 @@ env:
     - M1=ONE
     
 branches:
-  only:
+  except:
    - master
    - "branchonly"
+   - test
+   
    
 build:
   pre_ci:
