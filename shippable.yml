@@ -28,7 +28,6 @@ build:
     - docker build -t=shippabledocker/hitchcock2_sample_python .
     - docker push shippabledocker/hitchcock2_sample_python
 
-
 integrations:
   hub:
     - integrationName: ship-docker
