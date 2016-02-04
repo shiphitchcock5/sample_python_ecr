@@ -11,13 +11,13 @@ env:
     - M1=ONE
 
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/hitchcock2_sample_python .
+ # pre_ci:
+  #  - docker build -t=shippabledocker/hitchcock2_sample_python .
 
   pre_ci_boot:
     image_name: shippabledocker/hitchcock2_sample_python
     image_tag: latest
-    pull: false
+    pull: pull
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
@@ -25,6 +25,7 @@ build:
     - ls -al
 
   post_ci:
+    - docker build -t=shippabledocker/hitchcock2_sample_python .
     - docker push shippabledocker/hitchcock2_sample_python
 
 
