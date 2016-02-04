@@ -34,4 +34,4 @@ integrations:
       type: docker
       branches:
         only:
-          - master
+          - "post/ci"
