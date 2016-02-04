@@ -2,9 +2,12 @@ language: python
 
 python:
   - 3.4
-  - 3.2
+  - 3.3
   - pypy
 
+services:
+  - couchdb
+ 
 env:
   global:
     - FOO=FUBU
