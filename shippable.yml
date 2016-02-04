@@ -1,17 +1,29 @@
 language: python
 
 python:
-  - 0.12
-  - 2.6
-  - 2.7
-  - 3.2
-  - 3.3
+  - "3.3"
   - 3.4
   - pypy3
 
-#services:
- # - couchdb
-  #- mysql
+services:
+  - couchdb
+  - mysql
+  - selenium
+  - postgres
+  - mongo
+  - redis
+  - rethinkdb
+  - sqlite
+  - elasticsearch
+  - cassandra
+  - neo4j
+  
+addons:
+  firefox: "27.0"
+  selenium: "2.43"
+  hosts:
+    - google
+    - asdf
  
 env:
   global:
