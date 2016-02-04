@@ -3,25 +3,9 @@ language: python
 
 
 services:
-  - couchdb
-  - mysql
-  - selenium
-  - postgres
-  - mongo
-  - redis
-  - rethinkdb
-  - sqlite
-  - elasticsearch
-  - cassandra
-  - neo4j
+  - rabbitmq
+  - memcache
   
-addons:
-  firefox: "27.0"
-  selenium: "2.43"
-  hosts:
-    - google
-    - asdf
- 
 env:
   global:
     - FOO=FUBU
