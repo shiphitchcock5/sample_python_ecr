@@ -1,7 +1,7 @@
-#language: python
+language: pythonaa
 
 python:
-  - '13.3'
+  - '3.3'
   
 services:
   - rabbitmq
