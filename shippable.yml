@@ -4,8 +4,8 @@ python:
   - 3.4
 
 branches:
- only:
-  - "#custom_image"
+ except:
+  - "#custom_image2"
 env:
   global:
     - FOO=FUBU
