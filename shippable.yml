@@ -9,9 +9,11 @@ env:
 
   matrix:
     - M1=ONE
+    
 branches:
   only:
    - master
+   - "branchonly"
    
 build:
   pre_ci:
