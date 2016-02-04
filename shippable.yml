@@ -3,6 +3,9 @@ language: python
 python:
   - 3.4
 
+branches:
+ only:
+  - custom_image
 env:
   global:
     - FOO=FUBU
