@@ -1,4 +1,4 @@
-#language: python
+language: aapython
 
 python:
   - 3.4
