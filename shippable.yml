@@ -1,4 +1,4 @@
-language: pythonaa
+language: node_js
 
 python:
   - '3.3'
