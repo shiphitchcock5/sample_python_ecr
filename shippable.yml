@@ -10,9 +10,7 @@ env:
   matrix:
     - M1=ONE
 
-branches:
-  except:
-   - "post/ci"    
+
     
 build:
  # pre_ci:
