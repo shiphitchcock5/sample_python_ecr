@@ -1,5 +1,10 @@
 language: python
 
+branches:
+  only:
+   - master
+   - drydock_image
+   
 python:
   - 3.4
   - 3.2
