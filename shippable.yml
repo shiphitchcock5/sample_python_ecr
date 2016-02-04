@@ -10,11 +10,7 @@ env:
   matrix:
     - M1=ONE
     
-branches:
-  except:
-   - "branchonly"
-   - test
-   
+
    
 build:
   pre_ci:
