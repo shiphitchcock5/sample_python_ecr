@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - 3.4
+  - "2.7"
 
 env:
   global:
@@ -9,6 +9,10 @@ env:
 
   matrix:
     - M1=ONE
+
+services:
+ - redis
+ 
 branches:
   only:
    - master
