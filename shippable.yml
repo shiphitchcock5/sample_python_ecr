@@ -5,10 +5,10 @@ branches:
    - master
    - drydock_image
    
-python:
-  - 3.4
-  - 3.2
-  - "pypy"
+#python:
+ # - 3.4
+  #- 3.2
+  #- "pypy"
 
 services:
   - mysql
