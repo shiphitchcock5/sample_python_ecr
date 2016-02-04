@@ -27,6 +27,10 @@ build:
   post_ci:
     - docker build -t=shippabledocker/hitchcock2_sample_python .
     - docker push shippabledocker/hitchcock2_sample_python
+    - docker build --rm -t=shippabledocker/hitchcock2_sample_python:test .
+    - docker build --rm -t=shippabledocker/hitchcock2_sample_python:qa .
+    - docker push shippabledocker/hitchcock2_sample_python:test
+    - docker push shippabledocker/hitchcock2_sample_python:qa
 
 integrations:
   hub:
