@@ -9,7 +9,10 @@ env:
 
   matrix:
     - M1=ONE
-
+branches:
+  only:
+   - master
+   
 build:
   pre_ci:
     - docker build -t=shippabledocker/python_pvt .
