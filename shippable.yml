@@ -3,9 +3,7 @@ language: python
 #python:
  # - 3.4
 
-branches:
- except:
-  - "#custom_image2"
+
 env:
   global:
     - FOO=FUBU
