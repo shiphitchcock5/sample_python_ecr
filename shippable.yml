@@ -5,7 +5,7 @@ python:
 
 branches:
  only:
-  - custom_image
+  - "#custom_image"
 env:
   global:
     - FOO=FUBU
