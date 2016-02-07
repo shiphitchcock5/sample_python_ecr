@@ -1,7 +1,7 @@
-language: pythonaaa
+language: python
 
 python:
-  - 13.4
+  - 3.4
 
 env:
   global:
