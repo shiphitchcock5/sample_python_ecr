@@ -10,17 +10,14 @@ env:
   matrix:
     - M1=ONE
     
-branches:
- except:
-  - test
-   
+
 build:
   pre_ci:
     - docker build -t=shippabledocker/python_pvt .
-
+mage_name: shippabledocker/python_pvt
+    image_t
   pre_ci_boot:
-    image_name: shippabledocker/python_pvt
-    image_tag: latest
+    iag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
