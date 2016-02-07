@@ -10,6 +10,10 @@ env:
   matrix:
     - M1=ONE
     
+services:
+  - mysql
+  - cassandra
+    
 branches:
  except:
    - pr11
