@@ -14,10 +14,10 @@ env:
 build:
   pre_ci:
     - docker build -t=shippabledocker/python_pvt .
-mage_name: shippabledocker/python_pvt
-    image_t
+
   pre_ci_boot:
-    iag: latest
+    image_name: shippabledocker/python_pvt
+    image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
