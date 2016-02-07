@@ -1,4 +1,4 @@
-language: aapython
+language: python
 
 python:
    - 13.2
