@@ -1,5 +1,10 @@
 language: "python"
 
+branches:
+ only:
+  - "default_image"
+  - "pr-defaultimage"
+  
 python:
   - '3.3'
   -  3.4
@@ -7,6 +12,7 @@ python:
 services:
   - rabbitmq
   - memcache
+  - mysql
   
 env:
   global:
@@ -25,6 +31,8 @@ build:
     - which python
     - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - coverage xml -o shippable/codecoverage/coverage.xml
+    - shippable_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
+    - mysql -e "create database if not exists \`some-test\` ;"
 
 
   
