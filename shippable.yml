@@ -32,7 +32,7 @@ build:
     - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - coverage xml -o shippable/codecoverage/coverage.xml
     - shippable_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
-    - mysql -e "create database if not exists `some-test` ;"
+    - mysql -e "create database if not exists \`some-test\` ;"
 
 
   
