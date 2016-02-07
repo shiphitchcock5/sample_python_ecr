@@ -1,7 +1,7 @@
 language: pythonaaa
 
 python:
-  - 13.4
+  - 3.4
 
 env:
   global:
@@ -10,34 +10,27 @@ env:
   matrix:
     - M1=ONE
 
-
     
 build:
  # pre_ci:
   #  - docker build -t=shippabledocker/hitchcock2_sample_python .
 
   pre_ci_boot:
-    image_name: shippabledocker/hitchcock2_sample_python
-    image_tag: latest
-    pull: pull
+    image_name: drydock/u12nodall
+    image_tag: tip
+    pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - ps -eax
     - ls -al
-
-  post_ci:
+  on_success:
     - docker build -t=shippabledocker/hitchcock2_sample_python .
-    - docker push shippabledocker/hitchcock2_sample_python
-    - docker build --rm -t=shippabledocker/hitchcock2_sample_python:test .
-    - docker build --rm -t=shippabledocker/hitchcock2_sample_python:qa .
-    - docker push shippabledocker/hitchcock2_sample_python:test
-    - docker push shippabledocker/hitchcock2_sample_python:qa
+    - if [ "$IS_PULL_REQUEST" != true ]; then docker push shippabledocker/hitchcock2_sample_python:latest:; fi
+  
 
 integrations:
   hub:
     - integrationName: ship-docker
       type: docker
-      branches:
-        only:
-          - "post/ci"
+      
