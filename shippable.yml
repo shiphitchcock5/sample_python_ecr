@@ -11,8 +11,8 @@ env:
   matrix:
     - M1=ONE
 
-services:
- - redis
+#services:
+ #- redis
  
 branches:
   only:
