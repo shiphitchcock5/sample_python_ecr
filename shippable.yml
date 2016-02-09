@@ -1,19 +1,11 @@
 language: "python"
 
-branches:
- only:
-  - "default_image"
-  - "pr-defaultimage"
-  
+
 python:
   - '3.3'
   -  3.4
   
-services:
-  - rabbitmq
-  - memcache
-  - mysql
-  
+
 env:
   global:
     - FOO=FUBU
