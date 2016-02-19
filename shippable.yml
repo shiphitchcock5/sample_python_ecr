@@ -16,28 +16,17 @@ build:
  # pre_ci:
   #  - docker build -t=shippabledocker/hitchcock2_sample_python .
 
-  pre_ci_boot:
-    image_name: shippabledocker/hitchcock2_sample_python
-    image_tag: latest
-    pull: pull
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
   ci:
     - ps -eax
     - ls -al
 
   post_ci:
-    - docker build -t=shippabledocker/hitchcock2_sample_python .
-    - docker push shippabledocker/hitchcock2_sample_python
-    - docker build --rm -t=shippabledocker/hitchcock2_sample_python:test .
-    - docker build --rm -t=shippabledocker/hitchcock2_sample_python:qa .
-    - docker push shippabledocker/hitchcock2_sample_python:test
-    - docker push shippabledocker/hitchcock2_sample_python:qa
+    - docker build -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1  .
+    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 
+    
 
 integrations:
   hub:
-    - integrationName: ship-docker
-      type: docker
-      branches:
-        only:
-          - "post/ci"
+    - integrationName: ship-ecr
+      type: ecr
+      
