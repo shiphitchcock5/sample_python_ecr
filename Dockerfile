@@ -1,3 +1,4 @@
 FROM drydock/u12pyt:prod
 
-RUN mkdir -p /tmp/logs
+#RUN mkdir -p /tmp/logs
+COPY . /src
