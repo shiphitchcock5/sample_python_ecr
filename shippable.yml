@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - "pypy"
+ # - "pypy"
   - 3.4
 
 env:
@@ -14,32 +14,4 @@ env:
 #services:
  #- redis
  
-branches:
-  only:
-   - master
-   
-build:
-  pre_ci:
-    - docker build -t=shippabledocker/python_pvt .
 
-  pre_ci_boot:
-    image_name: shippabledocker/python_pvt
-    image_tag: latest
-    pull: false
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
-  ci:
-    - ps -eax
-    - ls -al
-
-  post_ci:
-    - docker push shippabledocker/python_pvt
-
-
-integrations:
-  hub:
-    - integrationName: "ship-docker"
-      type: docker
-      branches:
-        only:
-          - master
