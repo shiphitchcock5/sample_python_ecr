@@ -1,17 +1,32 @@
-language: python
+build:
+  pre_ci:
+    - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 .
 
-python:
- # - "pypy"
-  - 3.4
+  pre_ci_boot:
+    image_name: 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1
+    image_tag: latest
+    pull: false
+    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
-env:
-  global:
-    - FOO=FUBU
+  ci:
+    - ps -eax
+    - ls -al
 
-  matrix:
-    - M1=ONE
 
-#services:
- #- redis
- 
+  post_ci:
+    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 
 
+  smoke_test:
+    - sudo ls /
+
+deploy:
+  pre_build:
+    - ls
+    - ls -al
+
+
+integrations:
+  hub:
+    - integrationName: "ship-ecr"
+      type: ecr
+     
