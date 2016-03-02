@@ -19,6 +19,7 @@ build:
   ci:
     - ps -eax
     - ls -al
+    - sleep 3m
 
 
   post_ci:
