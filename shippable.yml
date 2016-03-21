@@ -17,19 +17,20 @@ build:
   #  - docker build -t=shippabledocker/hitchcock2_sample_python .
   cache: true
   cache_dir_list: 
-    - $SHIPPABLE_BUILD_DIR/node_modules
+    - $SHIPPABLE_BUILD_DIR/shippable.yml
 
   ci:
     - ps -eax
     - ls -al
 
   post_ci:
-    - docker build --rm -t=gcr.io/vidya-project/newimg3 .
-    - docker push gcr.io/vidya-project/newimg3
-    
+    - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 .
+    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 
+
+
 
 integrations:
   hub:
-    - integrationName: ship-gcr
-      type: gcr
+    - integrationName: ship-ecr
+      type: ecr
       
