@@ -27,10 +27,19 @@ build:
     - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 .
     - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 
 
+  on_success:
+    - echo "build passed"
+  
+  on_failure:
+    - echo "build failed"
+    
 
 
 integrations:
   hub:
     - integrationName: ship-ecr
       type: ecr
+      branches:
+        only:
+          - master
       
